@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Read the blank.htm file from the public directory
     const filePath = join(process.cwd(), 'public', 'blank.htm');

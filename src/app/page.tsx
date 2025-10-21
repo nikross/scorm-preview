@@ -8,7 +8,7 @@ import { Trash2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 function AppContent() {
-  const { packageData, deletePackage, setPackageData } = useScormContext();
+  const { packageData, deletePackage/* , setPackageData */ } = useScormContext();
 
   return (
     <div className="min-h-screen bg-gray-200">
