@@ -32,7 +32,7 @@ export const useScorm = () => {
       setPackageData({
         isLoaded: true,
         isLoading: false,
-        isStarted: false,
+        isStarted: true,
       });
       
       setStatus({

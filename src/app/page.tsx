@@ -16,7 +16,7 @@ function AppContent() {
         <div className="container mx-auto px-16 flex items-center justify-between">
           <h1 
             className="text-xl font-bold cursor-pointer hover:text-gray-300 transition-colors"
-            onClick={() => setPackageData(prev => ({ ...prev, isStarted: false }))}
+            // onClick={() => setPackageData(prev => ({ ...prev, isStarted: false }))}
           >
             Simple LMS
           </h1>
