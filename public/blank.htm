@@ -1,0 +1,20 @@
+<html>
+    <body>
+      <script>
+        // Refresh the parent window (the page containing the iframe)
+        function refreshParent() {
+          if (window.parent && window.parent !== window) {
+            window.parent.location.reload();
+          } else {
+            window.location.reload();
+          }
+        }
+        
+        // Auto-refresh parent page immediately when iframe loads
+        document.addEventListener('DOMContentLoaded', function() {
+          // Small delay to ensure iframe is fully loaded
+          setTimeout(refreshParent, 100);
+        });
+      </script>
+    </body>
+</html>

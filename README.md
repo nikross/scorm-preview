@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SCORM Preview Application
+
+A Next.js application designed for **customer demos** and **SCORM streaming demonstrations**. This tool helps customers understand and visualize how SCORM content can be streamed and delivered through a modern web application.
+
+## Purpose
+
+This application serves as a **demo platform** to showcase:
+- How SCORM content can be uploaded and processed
+- Real-time streaming of SCORM modules from external sources
+- Modern web-based SCORM content delivery
+- Customer visualization of SCORM integration capabilities
+
+## How It Works
+
+### 1. Upload Module
+- **Drag & Drop Interface**: Users can drag and drop SCORM ZIP files directly onto the upload area
+- **File Processing**: The application extracts license and module parameters from the uploaded ZIP file
+- **Parameter Extraction**: Automatically parses the `index.html` file to find license and module identifiers
+- **Local Storage**: Stores extracted parameters for session persistence
+
+### 2. View Module
+- **Streaming Delivery**: Content is streamed from external SCORM sources using dynamic API routes
+- **SCORM 1.2 API Integration**: Full SCORM 1.2 compliance with proper API initialization
+- **Responsive Viewer**: Content is displayed in a responsive iframe with proper aspect ratios
+- **Real-time Loading**: Dynamic HTML generation with proper SCORM wrapper integration
+
+### 3. Delete Module
+- **One-Click Removal**: Simple delete button in the header to remove loaded modules
+- **Storage Cleanup**: Automatically clears localStorage and resets application state
+- **Fresh Start**: Returns to upload interface for new module testing
+
+## Technical Features
+
+- **Next.js 14** with App Router
+- **SCORM 1.2 API** integration using `scorm-again` library
+- **Dynamic API Routes** for content streaming
+- **ZIP File Processing** with JSZip
+- **Responsive Design** with Tailwind CSS
+- **TypeScript** for type safety
+- **Context-based State Management**
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
+
+```bash
+npm install
+# or
+pnpm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Upload**: Drag and drop a SCORM ZIP file onto the upload area
+2. **Process**: Wait for the application to extract parameters and load the module
+3. **View**: Click to start viewing the SCORM content in the integrated viewer
+4. **Delete**: Use the trash icon in the header to remove the current module
 
-## Learn More
+## Architecture
 
-To learn more about Next.js, take a look at the following resources:
+The application uses a streaming approach where:
+- SCORM content is not stored locally
+- Parameters are extracted from uploaded ZIP files
+- Content is dynamically streamed from external sources
+- API routes generate HTML wrappers with proper SCORM integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This approach demonstrates how modern web applications can integrate with SCORM content without traditional file storage, making it ideal for customer demonstrations and proof-of-concept scenarios.
