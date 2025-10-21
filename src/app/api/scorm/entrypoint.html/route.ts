@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ license: string; module: string }> }
-) {
-  const { license, module } = await params;
+export async function GET(request: NextRequest) {
+  const { searchParams } = new URL(request.url);
+  const license = searchParams.get('license');
+  const module = searchParams.get('module');
 
   // Validate parameters
   if (!license || !module) {

@@ -22,7 +22,7 @@ export const ScormViewer: React.FC = () => {
       
       if (license && moduleId) {
         // Set iframe src to the API route with extracted parameters
-        iframe.src = `/api/scorm-entrypoint/${encodeURIComponent(license)}/${encodeURIComponent(moduleId)}`;
+        iframe.src = `/api/scorm/entrypoint.html?license=${encodeURIComponent(license)}&module=${encodeURIComponent(moduleId)}`;
       } else {
         console.error('License or module ID not found in localStorage. Cannot load SCORM content.');
       }
