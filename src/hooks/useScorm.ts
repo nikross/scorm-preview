@@ -101,7 +101,7 @@ export const useScorm = () => {
       setPackageData({
         isLoaded: true,
         isLoading: false,
-        isStarted: false,
+        isStarted: true,
       });
 
       updateStatus('Package loaded successfully!', 'success');
