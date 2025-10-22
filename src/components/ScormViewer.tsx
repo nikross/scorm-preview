@@ -41,9 +41,8 @@ export const ScormViewer: React.FC = () => {
             ref={iframeRef}
             className="w-full border-0"
             style={{ 
-              aspectRatio: '16/9',
               maxWidth: '100%',
-              height: 'auto'
+              height: '80vh'
             }}
             allow="autoplay; fullscreen"
           />
